@@ -1,0 +1,7 @@
+{
+  "name": "Komiku",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
