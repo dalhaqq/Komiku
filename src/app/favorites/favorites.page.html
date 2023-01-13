@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Favoritku</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Favoritku</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list>
+    <ion-item *ngFor="let comic of favorites" [routerLink]="['/comic', comic.slug]">
+      <img src="{{apiService.apiUrl() + comic.poster}}"/>
+      <ion-label>
+        {{ comic.title }}
+        <p>Rating: {{ comic.rating ?? "Belum ada rating" }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

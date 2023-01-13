@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Kategori {{category.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let comic of category.comics" routerDirection="root" [routerLink]="['/comic', comic.slug]">
+      <!-- image poster -->
+      <ion-img src="{{apiService.apiUrl() + comic.poster}}"></ion-img>
+      <ion-label>
+        {{ comic.title }}
+        <p>Rating: {{ comic.rating ?? "Belum ada rating" }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
